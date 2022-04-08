@@ -1,0 +1,13 @@
+.app {
+  margin-top: 56px;
+  height: 100%;
+}
+
+.sidebar {
+  width: 300px;
+  height: 905px;
+  background-color: #e6d5c5;
+
+  display: flex;
+  flex-flow: column;
+}

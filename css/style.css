@@ -1,0 +1,201 @@
+.palette {
+  color: #707070;
+  color: #dfdfdf;
+  color: #d2c0ae;
+  color: #97ccd4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  top: 0px;
+  background-color: #d2c0ae;
+  width: 100%;
+  display: flex;
+  height: 56px;
+  position: fixed;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #707070;
+}
+
+.button {
+  user-select: none;
+}
+
+.round {
+  border: 1px solid #707070;
+  border-radius: 12px;
+}
+
+.logo-text {
+  color: #707070;
+  font-size: 30px;
+  font-family: Dutch801BT-Roman, Dutch801 Rm BT;
+  margin: auto;
+  margin-left: 30px;
+}
+
+#container {
+  margin: auto;
+  margin-top: 56px;
+  width: 920px;
+  padding-left: 72px;
+  padding-right: 72px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+
+  border: 1px solid;
+  border-color: #c4c4c4;
+  border-top: none;
+  border-bottom: none;
+}
+
+.section-multiple {
+  width: 920px;
+  height: 370px;
+  margin: auto;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.images-multiple {
+  width: 100%;
+  height: 260px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.image-small {
+  width: 160px;
+  height: 260px;
+  border-radius: 12px;
+}
+
+.title {
+  color: #707070;
+  font-family: Constantina;
+  font-size: 30px;
+}
+
+.see-all {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 36px;
+  line-height: 36px;
+  align-content: center;
+  padding-left: 30px;
+  background-color: #dfdfdf;
+  color: #707070;
+  font-family: Constantina;
+  font-size: 20px;
+  transition-duration: 0.1s;
+}
+
+.see-all:hover {
+  background-color: #d2c0ae;
+}
+
+.section-single {
+  width: 920px;
+  height: 385px;
+  margin: auto;
+
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.image-single {
+  width: 920px;
+  height: 320px;
+  margin-top: 30px;
+}
+
+nav {
+  position: absolute;
+  position: fixed;
+  top: 96px;
+  left: 80%;
+  width: 170px;
+}
+
+.navbutton {
+  user-select: none;
+  margin-top: 15px;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  align-content: center;
+  background-color: #dfdfdf;
+  color: #707070;
+  font-family: Constantina;
+  font-size: 20px;
+  display: flex;
+  transition-duration: 0.1s;
+}
+
+.navbutton-short {
+  user-select: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 90%;
+  height: 56px;
+  line-height: 56px;
+
+  background-color: #dfdfdf;
+  color: #707070;
+  font-family: Constantina;
+  font-size: 20px;
+  transition-duration: 0.1s;
+}
+
+.navicon {
+  width: 45px;
+  height: 45px;
+
+  margin-top: 5px;
+  margin-left: 6px;
+  margin-right: 30px;
+}
+
+.navbutton:hover {
+  background-color: #d2c0ae;
+}
+.navbutton-short:hover {
+  background-color: #d2c0ae;
+}
+
+.shadow {
+  box-shadow: 5px 5px 5px #dfdfdf;
+}
+footer {
+  bottom: 0;
+  width: 100%;
+  height: 132px;
+  background-color: #d2c0ae;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-text {
+  margin-top: 40px;
+  color: #707070;
+  font-family: Constantina;
+  font-size: 16px;
+  text-align: center;
+}

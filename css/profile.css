@@ -1,0 +1,48 @@
+#profile {
+  margin: auto;
+  margin-top: 56px;
+  padding-top: 30px;
+  padding-left: 72px;
+  padding-right: 72px;
+  width: 920px;
+  background-color: #ffffff;
+
+  border: 1px solid;
+  border-color: #c4c4c4;
+  border-top: none;
+  border-bottom: none;
+}
+
+#details {
+  flex-direction: row;
+  align-items: center;
+  width: 920px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 240px;
+}
+
+#username {
+  color: #5c5c5c;
+  font-family: Constantina;
+  font-size: 30px;
+}
+
+#pfp {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 2px solid #c4c4c4;
+  margin-right: 20px;
+}
+
+#bio {
+  color: #707070;
+  font-family: Constantina;
+  font-size: 15px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
