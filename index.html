@@ -3,6 +3,7 @@
     <head>
       <title>Bookshelf - home</title>
       <link rel="stylesheet" href="css\style.css" />
+      <link rel="stylesheet" href="css\profile-sidebar.css" />
     </head>
     <body>
       
@@ -102,13 +103,14 @@
         </div>
       </div>
       <nav>
-        <a href="html/profile.html">
+        <!-- profil - pokazanie menu, zasysanie danych z xml -->
+        <a id="profileButton" onclick="profileSB.style.visibility='visible'; update('user1.xml');">
         <div class="navbutton round shadow">
           <img class="navicon" src="resources\icons\profile.png"></img>
           profile
         </div>
         </a>
-        <a href="html/shelf.html">
+        <a>
         <div class="navbutton round shadow">
           <img class="navicon" src="resources\icons\shelf.png"></img>
           your shelf
@@ -122,6 +124,25 @@
         </div>
         </a>
       </nav>
+      <!-- profil - wstecz -->
+      <div id="profileSB">
+        <button class="back" onclick="profileSB.style.visibility='hidden';">
+          
+          <span class="backicon">
+            <ion-icon name="arrow-back-outline"></ion-icon></span>
+            <span class="backtext">Back</span>
+        </button>
+        <div class="details">
+          <img src="../resources/icons/profile.png" id="pfp" />
+          <br>
+          <a id="username"><strong>username</strong></a>
+          <br>
+          <a id="bio"
+            >user bio
+          </a>
+        </div>
+        
+      </div>
       <header class="shadow">
         <logo class="logo-text">
           <a class="button">Bookshelf</a>
@@ -136,6 +157,38 @@
           </a>
         </div>
       </footer>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script>
+        function update() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            console.log("huj");
+            show(this);
+          }
+        };
+        xhttp.open("GET", "user1.xml", true);
+        xhttp.send();
+        
+      }
+      function show(xml) {
+        var xmlDoc = xml.responseXML;
+        var table="<tr><th>Artist</th><th>Title</th></tr>";
+        var x = xmlDoc.getElementsByTagName("user");
+        
+        console.log(x[0]);
+        // huj czekpoint fr
+          var uname = x[0].getAttribute("uname");
+          var bio = x[0].getAttribute("bio");
+          
+          console.log(uname);
+          console.log(bio);
+        
+        document.getElementById("username").innerHTML = uname;
+        document.getElementById("bio").innerHTML = bio;
+      }
+      </script>
     </body>
   </html></d<!doctype
 >

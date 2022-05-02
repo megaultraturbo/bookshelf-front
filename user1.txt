@@ -1,0 +1,4 @@
+<user>
+  <uname>JanKowalski1972</uname>
+  <bio>Czytacz książek bardzo lubię książki fr 100</bio>
+</user>
