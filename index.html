@@ -4,6 +4,7 @@
       <title>Bookshelf - home</title>
       <link rel="stylesheet" href="css\style.css" />
       <link rel="stylesheet" href="css\profile-sidebar.css" />
+      <link rel="stylesheet" href="css\bookpage.css" />
     </head>
     <body>
       
@@ -12,22 +13,29 @@
           <a class="title">New arrivals</a>
           <div class="images-multiple">
             <img
+              id="01"
+              onclick="bookpage('01')"
               class="image-small round shadow"
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
             <img
+            id="02"
+            onclick="bookpage('02')"
               class="image-small round shadow"
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
             <img
+              id="b03"
               class="image-small round shadow"
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
             <img
+              id="b04"
               class="image-small round shadow"
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
             <img
+              id="b05"
               class="image-small round shadow"
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
@@ -38,12 +46,13 @@
         </div>
         <div class="section-single">
           <a class="title">Book of the day</a>
-          <a href="html/sample-book.html">
+          <!--a href="html/sample-book.html"-->
           <img
+            id="b06"
             class="image-single round shadow"
             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
           />
-          </a>
+          </!--a>
         </div>
         <div class="section-multiple">
           <a class="title">Picks for you</a>
@@ -141,7 +150,14 @@
             >user bio
           </a>
         </div>
-        
+      </div>
+      <!-- szczegoly ksaizki i tlo -->
+      <div id="screen">
+        <div id="bookpage">
+          <a id="title">title</a>
+          <a id="author">author</a>
+          <a id="desc">desc</a>
+        </div>
       </div>
       <header class="shadow">
         <logo class="logo-text">
@@ -165,16 +181,15 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             console.log("huj");
-            show(this);
+            showUser(this);
           }
         };
         xhttp.open("GET", "user1.xml", true);
         xhttp.send();
         
       }
-      function show(xml) {
+      function showUser(xml) {
         var xmlDoc = xml.responseXML;
-        var table="<tr><th>Artist</th><th>Title</th></tr>";
         var x = xmlDoc.getElementsByTagName("user");
         
         console.log(x[0]);
@@ -187,6 +202,51 @@
         
         document.getElementById("username").innerHTML = uname;
         document.getElementById("bio").innerHTML = bio;
+      }
+      </script>
+      <!-- załadowanie szczegółów dot książki -->
+      <script>
+        function bookpage(id) {
+          test = id;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            console.log("huj book");
+            showBook(this, test);
+          }
+        };
+        xhttp.open("GET", "book.xml", true);
+        xhttp.send();
+        
+      }
+      function showBook(xml,id) {
+        console.log(id);
+        var xmlDoc = xml.responseXML;
+        console.log(xmlDoc);
+        var x = xmlDoc.getElementsByTagName("book");
+
+        var title, author, desc;
+
+        console.log(x[0]);
+        var gowno; 
+        
+        // huj czekpoint fr
+        for (var i = 0; i<id; i++){
+          gowno = x[i].getAttribute("bookId");
+          console.log("pobralem "+gowno);
+          if (id == gowno){
+            title = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            author = x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+            desc = x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
+          }
+        }
+        console.log(title);
+        console.log(author);
+        console.log(desc);
+        
+        document.getElementById("title").innerHTML = title;
+        document.getElementById("author").innerHTML = author;
+        document.getElementById("desc").innerHTML = desc;
       }
       </script>
     </body>
