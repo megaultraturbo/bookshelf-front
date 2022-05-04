@@ -8,6 +8,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: aquamarine;
 }
 
 header {
@@ -53,6 +54,7 @@ a:visited {
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #ffffff;
+  background-color: aquamarine;
 
   border: 1px solid;
   border-color: #c4c4c4;
