@@ -3,15 +3,25 @@
     <head>
       <title>Bookshelf - home</title>
       <link rel="stylesheet" href="css\style.css" />
+      <link rel="stylesheet" href="css\palette.css" />
       <link rel="stylesheet" href="css\profile-sidebar.css" />
       <link rel="stylesheet" href="css\bookpage.css" />
     </head>
     <body>
       
+      <div id="bookpage" class="grid bg-day color-grey">
+        <img class="bigpic round"
+        src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="">
+        <a id="desc" class="constantina20">desc</a>
+        <a id="title" class="constantina30">title</a>
+        <a id="author" class="constantina20">author</a>
+        <a id="close" onclick="$('#bookpage').hide()">CLOSE</a>
+    </div>
+
       <div id="container">
         <div class="section-multiple">
-          <a class="title">New arrivals</a>
-          <div class="images-multiple">
+          <a class="title constantina30 color-grey">New arrivals</a>
+          <div class="images-multiple flex">
             <img
               id="01"
               onclick="bookpage('01')"
@@ -25,38 +35,42 @@
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
             <img
-              id="b03"
+              id="03"
+              onclick="bookpage('03')"
               class="image-small round shadow"
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
             <img
-              id="b04"
+              id="04"
+              onclick="bookpage('04')"
               class="image-small round shadow"
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
             <img
-              id="b05"
+              id="05"
+              onclick="bookpage('05')"
               class="image-small round shadow"
               src="https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
             />
           </div>
-          <a href="html/catalogue.html" class="see-all round shadow">
+          <a href="html/catalogue.html" class="see-all round shadow constantina20 color-grey bg-ivory">
             see all
           </a>
         </div>
         <div class="section-single">
-          <a class="title">Book of the day</a>
+          <a class="title constantina30 color-grey">Book of the day</a>
           <!--a href="html/sample-book.html"-->
           <img
-            id="b06"
+            id="06"
+            onclick="bookpage('06')"
             class="image-single round shadow"
             src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
           />
           </!--a>
         </div>
         <div class="section-multiple">
-          <a class="title">Picks for you</a>
-          <div class="images-multiple">
+          <a class="title constantina30 color-grey">Picks for you</a>
+          <div class="images-multiple flex">
             <img
               class="image-small round shadow"
               src="https://images-na.ssl-images-amazon.com/images/I/81jAxPkzJHL.jpg"
@@ -78,13 +92,13 @@
               src="https://images-na.ssl-images-amazon.com/images/I/81jAxPkzJHL.jpg"
             />
           </div>
-          <a href="html/catalogue.html" class="see-all round shadow">
+          <a href="html/catalogue.html" class="see-all round shadow constantina20 color-grey bg-ivory">
             see all
           </a>
         </div>
         <div class="section-multiple">
-          <a class="title">New on Bookshelf</a>
-          <div class="images-multiple">
+          <a class="title constantina30 color-grey">New on Bookshelf</a>
+          <div class="images-multiple flex">
             <img
               class="image-small round shadow"
               src="https://images-na.ssl-images-amazon.com/images/I/81jAxPkzJHL.jpg"
@@ -106,7 +120,7 @@
               src="https://images-na.ssl-images-amazon.com/images/I/81jAxPkzJHL.jpg"
             />
           </div>
-          <a href="html/catalogue.html" class="see-all round shadow">
+          <a href="html/catalogue.html" class="see-all round shadow constantina20 color-grey bg-ivory">
             see all
           </a>
         </div>
@@ -114,32 +128,50 @@
       <nav>
         <!-- profil - pokazanie menu, zasysanie danych z xml -->
         <a id="profileButton" onclick="profileSB.style.visibility='visible'; update('user1.xml');">
-        <div class="navbutton round shadow">
+        <div class="navbutton round shadow constantina20 color-grey bg-ivory">
           <img class="navicon" src="resources\icons\profile.png"></img>
           profile
         </div>
         </a>
         <a>
-        <div class="navbutton round shadow">
+        <div class="navbutton round shadow constantina20  color-grey bg-ivory">
           <img class="navicon" src="resources\icons\shelf.png"></img>
           your shelf
         </div>
         </a>
         <a>
-        <div class="navbutton round shadow">
+        <div class="navbutton round shadow constantina20  color-grey bg-ivory">
           <img class="navicon"
           src="resources\icons\search.png"></img>
-          <a>search</a>
+          <!--<a>search</a>-->
+          <input type="text" id="search" 
+          class="round constantina20 color-grey bg-ivory"
+          placeholder="search">
         </div>
         </a>
+        <a>
+        <div onclick="day()"
+        class="navbutton round shadow constantina20  color-grey bg-ivory">
+          <img class="navicon"
+          src="resources\icons\search.png"></img>
+          <a>day</a>
+        </div>
+        <div onclick="night()"
+        class="navbutton round shadow constantina20  color-grey bg-ivory">
+          <img class="navicon"
+          src="resources\icons\search.png"></img>
+          <a>night</a>
+        </div>
+        </a>
+
       </nav>
       <!-- profil - wstecz -->
       <div id="profileSB">
-        <button class="back" onclick="profileSB.style.visibility='hidden';">
+        <button id="backbutton" class="back bg-white" onclick="profileSB.style.visibility='hidden';">
           
-          <span class="backicon">
+          <span class="backicon color-grey">
             <ion-icon name="arrow-back-outline"></ion-icon></span>
-            <span class="backtext">Back</span>
+            <span class="backtext constantina30 color-grey">Back</span>
         </button>
         <div class="details">
           <img src="../resources/icons/profile.png" id="pfp" />
@@ -152,20 +184,17 @@
         </div>
       </div>
       <!-- szczegoly ksaizki i tlo -->
-      <div id="screen">
-        <div id="bookpage">
-          <a id="title">title</a>
-          <a id="author">author</a>
-          <a id="desc">desc</a>
-        </div>
-      </div>
-      <header class="shadow">
-        <logo class="logo-text">
+
+
+      <header class="flex bg-lbrown shadow">
+        <logo class="logo-text color-grey">
           <a class="button">Bookshelf</a>
         </logo>
       </header>
-      <footer>
-        <div class="footer-text">
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+      <footer class="bg-lbrown">
+        <div class="footer-text constantina16 color-grey">
           <a class="title" href="/html/about.html">About Bookshelf</a>
           <br>
           <a>
@@ -178,6 +207,9 @@
       <script src="js/profile.js" type="text/javascript"></script>
       <!-- załadowanie szczegółów dot książki -->
       <script src="js/book.js" type="text/javascript"></script>
+      <script>$("#bookpage").hide();</script>
+      <!-- ciemny motyw -->
+      <script src="js/daynight.js" type="text/javascript"></script>
     </body>
   </html></d<!doctype
 >

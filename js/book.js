@@ -35,6 +35,12 @@ function showBook(xml, id) {
   console.log(author);
   console.log(desc);
 
+  //$("#bookpage").html('<object data="html/bookpage.html">');
+
+  //$("#page").load("html/bookpage.html #bookpage");
+  $("#bookpage").show();
+  const ciba = "html/bookpage.html";
+
   document.getElementById("title").innerHTML = title;
   document.getElementById("author").innerHTML = author;
   document.getElementById("desc").innerHTML = desc;

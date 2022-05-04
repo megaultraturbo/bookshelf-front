@@ -1,0 +1,33 @@
+.palette {
+  color: #97ccd4;
+}
+
+.color-grey {
+  color: #707070;
+}
+
+.color-ivory {
+  color: #dfdfdf;
+}
+
+.color-lbrown {
+  color: #d2c0ae;
+}
+
+.color-dbrown {
+  color: #c4c4c4;
+}
+
+/* backgrounds */
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-lbrown {
+  background-color: #d2c0ae;
+}
+
+.bg-ivory {
+  background-color: #dfdfdf;
+}
