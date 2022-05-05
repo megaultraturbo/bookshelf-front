@@ -214,6 +214,10 @@ footer {
   border: none;
 }
 
+.noselect {
+  user-select: none;
+}
+
 form {
   box-sizing: border-box;
   width: 100%;

@@ -22,13 +22,13 @@ function showBook2(xml, text) {
   var title, author, desc;
 
   console.log(x[0]);
-  var gowno;
+  var y;
 
-  // huj czekpoint fr
+  // czekpoint fr
   for (var i = 0; i < 6; i++) {
-    gowno = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-    console.log("pobralem " + gowno);
-    if (text == gowno) {
+    y = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+    console.log("pobralem " + y);
+    if (text == y) {
       title = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
       author = x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
       desc = x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
