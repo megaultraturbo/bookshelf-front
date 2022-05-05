@@ -1,17 +1,21 @@
-function bookpage(id) {
+function searchtitle(text) {
+  text = text;
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       console.log("huj book");
-      showBook(this, id);
+      showBook2(this, text);
     }
   };
   xhttp.open("GET", "book.xml", true);
   xhttp.send();
 }
-function showBook(xml, id) {
-  console.log(id);
+
+// to
+function showBook2(xml, text) {
+  console.log(text);
   var xmlDoc = xml.responseXML;
+
   console.log(xmlDoc);
   var x = xmlDoc.getElementsByTagName("book");
 
@@ -21,10 +25,10 @@ function showBook(xml, id) {
   var gowno;
 
   // huj czekpoint fr
-  for (var i = 0; i < id; i++) {
-    gowno = x[i].getAttribute("bookId");
+  for (var i = 0; i < 6; i++) {
+    gowno = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
     console.log("pobralem " + gowno);
-    if (id == gowno) {
+    if (text == gowno) {
       title = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
       author = x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
       desc = x[i].getElementsByTagName("desc")[0].childNodes[0].nodeValue;
