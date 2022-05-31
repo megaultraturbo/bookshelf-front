@@ -187,7 +187,7 @@
             <ion-icon name="arrow-back-outline"></ion-icon></span>
             <span class="backtext constantina30 color-grey">Back</span>
         </button>
-        <div class="details">
+        <div>
           <img src="resources/icons/profile.png" id="pfp" />
           <br>
           <a id="username"></a>
@@ -199,13 +199,12 @@
             >user bio
           </a> -->
           <form id="loginform" action="php/login.php" method="post">
-          Login: <br /> <input type="text" name="login" /> <br />
-		      Hasło: <br /> <input type="password" name="haslo" /> <br /><br />
-		      <input type="submit" value="Zaloguj się" /> 
-
+          <input type="text" name="login" />
+		      <input type="password" name="haslo" />
+		      <input type="submit" value="Log in" /> 
           </form>
           <a href=php/register.php>
-            <button>Register</button>
+            <button>Sign in</button>
           </a>
 
 

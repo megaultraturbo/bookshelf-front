@@ -83,7 +83,7 @@ if (isset($_POST['email']))
 				if($ile_takich_maili>0)
 				{
 					$gitara=false;
-					$_SESSION['e_email']="Istnieje już konto przypisane do tego adresu e-mail!";
+					$_SESSION['e_email']="Email has already been used to register";
 				}		
 
 				//Czy login$login jest już zarezerwowany?
@@ -95,7 +95,7 @@ if (isset($_POST['email']))
 				if($ile_takich_loginow>0)
 				{
 					$gitara=false;
-					$_SESSION['e_login']="Istnieje już gracz o takim loginu! Wybierz inny.";
+					$_SESSION['e_login']="Username already exists";
 				}
 
                 echo $login;
@@ -145,24 +145,31 @@ if (isset($_POST['email']))
       <title>Bookshelf - register</title>
       <link rel="stylesheet" href="../css/style.css" />
       <link rel="stylesheet" href="../css/palette.css" />
+      <link rel="stylesheet" href="../css/register.css" />
     </head>
     <body>
-    <form id="registerform" method="post">
-        <?php
-            if (isset($_SESSION['e_login'])){
-                echo '<a>'.$_SESSION['e_login'].'</a>';
-                unset($_SESSION['e_login']);
-            }
-        ?>
+    <div class="center round shadow bg-lbrown">
+        <form id="registerform" method="post">
+            <?php
+                if (isset($_SESSION['e_login'])){
+                    echo '<a>'.$_SESSION['e_login'].'</a>';
+                    unset($_SESSION['e_login']);
+                }
+            ?>
 
 
-        Login: <br /> <input type="text" name="login" /> <br />
-        Email: <br /> <input type="text" name="email" /> <br />
-        Hasło: <br /> <input type="password" name="haslo1" /> <br /><br />
-        Potwierdź hasło: <br /> <input type="password" name="haslo2" /> <br /><br />
-        
-        <input type="submit" value="Register" /> 
-    </form>
+            <input type="text" name="login" placeholder="uesrname"/>
+            <input type="text" name="email" placeholder="email"/>
+            <input type="password" name="haslo1" placeholder="password"/>
+            <input type="password" name="haslo2" placeholder="confirm password"/>
+            <input type="submit" value="Register"/> 
+        </form>
+    </div>
 
     </body>
+    <header class="flex bg-lbrown shadow">
+        <logo class="logo-text color-grey">
+          <a class="button" href="../index.php">Bookshelf</a>
+        </logo>
+      </header>
 </html>

@@ -14,9 +14,9 @@
 
 .details {
   margin-top: 10px;
-  display: flexbox;
+  display: flex;
   flex-flow: column;
-  align-items: stretch;
+  
 }
 
 #username {

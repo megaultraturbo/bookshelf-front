@@ -1,0 +1,15 @@
+.center{
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 169px;
+}
+
+
+#registerform{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 28px;
+}

@@ -148,7 +148,13 @@ session_start();
           <img class="navicon"
           src="resources\icons\search.png"></img>
           <!--<a>search</a>-->
-          
+          <form onsubmit="searchtitle(document.getElementById('search').value);return false;">
+            <input type="text" id="search" 
+          class="round constantina20 color-grey bg-ivory"
+          placeholder="search"
+          >
+          <input type="submit" hidden />
+          </form>
         </div>
         </a>
         <a>
@@ -181,7 +187,7 @@ session_start();
           
           <?php
             echo "Hello, ".$_SESSION['Username'];
-            echo '! [ <a href="php/logout.php">Wyloguj się!</a> ]';
+            echo '<br><br><a href="php/logout.php">Log out</a>';
           ?>
           <!--
           <br>
