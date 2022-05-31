@@ -156,7 +156,7 @@
           <img class="navicon"
           src="resources\icons\search.png"></img>
           <!--<a>search</a>-->
-          <form onsubmit="searchtitle(document.getElementById('search').value);return false;">
+          <form id="searchform" onsubmit="searchtitle(document.getElementById('search').value);return false;">
             <input type="text" id="search" 
           class="round constantina20 color-grey bg-ivory"
           placeholder="search"
