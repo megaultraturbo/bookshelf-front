@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
   <html>
     <head>
@@ -127,7 +131,7 @@
       </div>
       <nav>
         <!-- profil - pokazanie menu, zasysanie danych z xml -->
-        <a id="profileButton" onclick="profileSB.style.visibility='visible'; update('user1.xml');">
+        <a id="profileButton" onclick="profileSB.style.visibility='visible'; /* update('user1.xml'); */">
         <div class="navbutton round shadow constantina20 color-grey bg-ivory">
           <img class="navicon" src="resources\icons\profile.png"></img>
           profile
@@ -144,13 +148,7 @@
           <img class="navicon"
           src="resources\icons\search.png"></img>
           <!--<a>search</a>-->
-          <form onsubmit="searchtitle(document.getElementById('search').value);return false;">
-            <input type="text" id="search" 
-          class="round constantina20 color-grey bg-ivory"
-          placeholder="search"
-          >
-          <input type="submit" hidden />
-          </form>
+          
         </div>
         </a>
         <a>
@@ -176,13 +174,27 @@
             <span class="backtext constantina30 color-grey">Back</span>
         </button>
         <div class="details">
-          <img src="../resources/icons/profile.png" id="pfp" />
+          <img src="resources/icons/profile.png" id="pfp" />
           <br>
-          <a id="username"><strong>username</strong></a>
+          <a id="username"></a>
+          <a id="unameError"></a>
+          
+          <?php
+            echo "Hello, ".$_SESSION['Username'];
+            echo '! [ <a href="php/logout.php">Wyloguj się!</a> ]';
+          ?>
+          <!--
           <br>
           <a id="bio"
             >user bio
-          </a>
+          </a> -->
+
+
+          </form>
+          
+
+
+
         </div>
       </div>
       <!-- szczegoly ksaizki i tlo -->
@@ -190,7 +202,7 @@
 
       <header class="flex bg-lbrown shadow">
         <logo class="logo-text color-grey">
-          <a class="button">Bookshelf</a>
+          <a class="button" href="index.php">Bookshelf</a>
         </logo>
       </header>
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
@@ -215,6 +227,8 @@
       <!-- ciemny motyw -->
       <script src="js/daynight.js" type="text/javascript"></script>
       <script src="js/search.js" type="text/javascript"></script>
+      <script src="js/outside.js" type="text/javascript"></script>
+      <script src="js/login.js" type="text/javascript"></script>
     </body>
   </html></d<!doctype
 >
