@@ -204,7 +204,7 @@
 		      <input type="submit" value="Log in" /> 
           </form>
           <a href=php/register.php>
-            <button>Sign in</button>
+            <button>Sign up</button>
           </a>
 
 

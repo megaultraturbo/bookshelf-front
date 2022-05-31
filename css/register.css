@@ -3,13 +3,23 @@
     height: fit-content;
     width: fit-content;
     margin-top: 169px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-
-#registerform{
+.flexitems{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 20px;
     padding: 28px;
+}
+
+.infotext{
+    margin-top: 28px;
+    width: 100%;
+    justify-self: center;
 }

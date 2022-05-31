@@ -26,7 +26,7 @@ if (isset($_POST['email']))
 		if ((filter_var($emailB, FILTER_VALIDATE_EMAIL)==false) || ($emailB!=$email))
 		{
 			$gitara=false;
-			$_SESSION['e_email']="Podaj poprawny adres e-mail!";
+			$_SESSION['e_email']="Invalid email address";
 		}
 		
 		//Sprawdź poprawność hasła
@@ -36,13 +36,13 @@ if (isset($_POST['email']))
 		if ((strlen($haslo1)<8) || (strlen($haslo1)>20))
 		{
 			$gitara=false;
-			$_SESSION['e_haslo']="Hasło musi posiadać od 8 do 20 znaków!";
+			$_SESSION['e_password']="Password must be 8 to 20 characters long";
 		}
 		
 		if ($haslo1!=$haslo2)
 		{
 			$gitara=false;
-			$_SESSION['e_haslo']="Podane hasła nie są identyczne!";
+			$_SESSION['e_password']="Paswords do not match";
 		}	
 
 		$haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT);
@@ -111,7 +111,7 @@ if (isset($_POST['email']))
 					 if ($polaczenie->query("INSERT INTO user VALUES (NULL, '$login', '$email', '$haslo_hash')"))
 					{
 						$_SESSION['udanarejestracja']=true;
-						header('Location: ../index.php');
+						
 					}
 					else
 					{
@@ -148,23 +148,56 @@ if (isset($_POST['email']))
       <link rel="stylesheet" href="../css/register.css" />
     </head>
     <body>
+
+	<?php
+		if (!isset($_SESSION['udanarejestracja'])){
+			echo '<div class="center round shadow bg-lbrown">';
+			echo '<a class="infotext constantina20 color-grey">Join Bookshelf! 📚</a>';
+			echo '<form id="registerform" class="flexitems" method="post">';
+			echo '<input type="text" name="login" placeholder="uesrname"/>';
+			echo '<input type="text" name="email" placeholder="email"/>';
+			echo '<input type="password" name="haslo1" placeholder="password"/>';
+			echo '<input type="password" name="haslo2" placeholder="confirm password"/>';
+			echo '<input type="submit" value="Sign up"/> ';
+			echo '</form>';
+			echo '</div>';
+		}
+	?><!-- 
     <div class="center round shadow bg-lbrown">
-        <form id="registerform" method="post">
-            <?php
-                if (isset($_SESSION['e_login'])){
-                    echo '<a>'.$_SESSION['e_login'].'</a>';
-                    unset($_SESSION['e_login']);
-                }
-            ?>
-
-
+        <form id="registerform" class="flexitems" method="post">
             <input type="text" name="login" placeholder="uesrname"/>
             <input type="text" name="email" placeholder="email"/>
             <input type="password" name="haslo1" placeholder="password"/>
             <input type="password" name="haslo2" placeholder="confirm password"/>
             <input type="submit" value="Register"/> 
         </form>
-    </div>
+    </div> -->
+
+		<?php
+		if (isset($_SESSION['e_login']) || (isset($_SESSION['e_email'])) || (isset($_SESSION['e_password'])) || (isset($_SESSION['udanarejestracja']))){
+			echo'<div class="center flexitems round bg-lbrown shadow">';
+		}
+			
+
+			if (isset($_SESSION['e_login'])){
+				echo '<a class="constantina20">🛈 '.$_SESSION['e_login'].'</a>';
+				unset($_SESSION['e_login']);
+			}
+			if (isset($_SESSION['e_email'])){
+				echo '<a class="constantina20">🛈 '.$_SESSION['e_email'].'</a>';
+				unset($_SESSION['e_email']);
+			}
+			if (isset($_SESSION['e_password'])){
+				echo '<a class="constantina20">🛈 '.$_SESSION['e_password'].'</a>';
+				unset($_SESSION['e_password']);
+			}
+			if (isset($_SESSION['udanarejestracja'])){
+				unset($_SESSION['udanarejestracja']);
+				echo '<a clas="button" href="../index.php">Success! You can log in now</a>';
+			}
+			echo '</div>';
+		?>
+	
 
     </body>
     <header class="flex bg-lbrown shadow">

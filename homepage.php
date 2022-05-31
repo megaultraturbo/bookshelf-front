@@ -168,6 +168,12 @@ session_start();
         <ion-icon name="moon-outline" class="navicon color-grey"></ion-icon>
           <a>night</a>
         </div>
+        <a href="php/contact.php">
+        <div
+        class="navbutton round shadow constantina20  color-grey bg-ivory">
+        <ion-icon name="sunny-outline" class="navicon color-grey"></ion-icon>
+          <a href="php/contact.php">say hi</a>
+        </div>
         </a>
 
       </nav>
